@@ -1,0 +1,122 @@
+header {
+  background-color: #ffffff;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  min-height: 13vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 10vh;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.logo_text {
+  height: 8vh;
+  margin-top: 20px;
+}
+
+nav {
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
+nav button {
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 7px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+nav button:hover {
+  opacity: 0.8;
+}
+
+body {
+  padding: 20px;
+  background-image: url(images/background2.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.voir_annonce {
+  position: fixed;
+  top: 50%;
+  left: 17%;
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.voir_annonce:hover {
+  opacity: 0.9;
+}
+
+/* Positionnement div_form */
+
+.div_form {
+  background-color: white;
+  position: fixed;
+  top: 30%;
+  left: 35%;
+  transform: translate(-5%, -5%);
+  border: 1px solid rgb(66, 21, 21);
+  border-radius: 2px;
+  box-shadow: 35px -20px rgb(66, 21, 21);
+}
+
+.titre {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Styles pour le conteneur de la forme */
+.form-container {
+  padding: 20px 30px 20px 30px;
+  background-color: #fffbfb;
+}
+
+/* Largeur complète pour les champs de saisie */
+.form-container input,
+.form-container textarea {
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+}
+
+/* style au moment de la selection d'un input : focus */
+.form-container input[type="text"]:focus
+
+/* .form-container input[type="password"]:focus */ {
+  outline: none;
+}
+
+/* Style sur le bouton pour ajouter un produit*/
+.form-container button {
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  /* opacity: 0.9; */
+  margin-left: 40%;
+  border-radius: 2px;
+}
+
+/* Planez les effets pour les boutons */
+.form-container button:hover {
+  opacity: 0.9;
+}

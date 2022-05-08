@@ -1,0 +1,71 @@
+/* style entete */
+
+header {
+  background-color: #ffffff;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  min-height: 13vh;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid rgb(66, 21, 21);
+}
+
+.logo {
+  height: 12vh;
+  margin-left: 20px;
+}
+
+.logo_text {
+  height: 8vh;
+  margin-top: 20px;
+  margin-left: -10%;
+}
+
+nav {
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
+nav button {
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 7px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+nav button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  position: fixed;
+  top: 20%;
+  left: 2%;
+}
+
+.retour_annonce {
+  margin-top: 70px;
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.img_enchere {
+  float: right;
+  width: 35%;
+  margin-left: -90%;
+}
+
+.result {
+  position: fixed;
+  top: 20%;
+  left: 2%;
+}

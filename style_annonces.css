@@ -1,0 +1,77 @@
+header {
+  background-color: #ffffff;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  min-height: 13vh;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid rgb(66, 21, 21);
+}
+
+.logo {
+  height: 9vh;
+  margin-left: 20px;
+  margin: 10px;
+}
+
+.logo_text {
+  height: 7vh;
+  margin-top: 20px;
+}
+
+nav {
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
+nav button {
+  background-color: rgb(66, 21, 21);
+  color: #fff;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 0.8em;
+}
+
+nav button:hover {
+  opacity: 0.8;
+}
+
+body {
+  padding: 20px;
+  background-image: url(images/background2.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.container_annonce {
+  margin-top: 60px;
+  padding: 40px 0px 80px 30px;
+  background-color: white;
+}
+
+.titre_annonce {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+}
+
+.liste_annonce {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px;
+}
+.annonce {
+  margin-bottom: -50px;
+}
+
+.annonce button {
+  border: 1px solid rgb(70, 32, 32);
+  background-color: white;
+  border-radius: 2px;
+  padding: 5px 10px 5px 10px;
+}
