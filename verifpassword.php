@@ -2,7 +2,7 @@
 
 session_start();
 
-$data_base = new PDO("mysql:dbname=auto_enchere;host=127.0.0.1", "root", "");
+$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,9 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_POST["password"] === $_POST['password2']) {
 
-        
-        
-        
         $requete = $data_base->prepare("INSERT INTO user (nom,prenom,email,password) VALUES (?,?,?,?)");
         $requete->execute([$nom, $prenom, $email, $hash]);
 

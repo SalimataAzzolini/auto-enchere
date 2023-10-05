@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "");
+$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])) {//si l'utilisateur est connecté
 
     $requete = $data_base->prepare("SELECT * FROM user WHERE id = ?");
     $requete->execute([$_SESSION['user_id']]);
     $user = $requete->fetch();
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {//si on a cliqué sur le bouton "mettre à jour mon profil"
 
         $newnom = htmlspecialchars($_POST['newnom']);
         $newprenom = htmlspecialchars($_POST['newprenom']);
@@ -22,9 +22,9 @@ if (isset($_SESSION['user_id'])) {
 
         if (isset($_POST['newnom'])) {
 
-            $insert_nom = $data_base->prepare("UPDATE user SET nom = ? WHERE id = ?");
-            $result = $insert_nom->execute([$newnom, $_SESSION['user_id']]);
-            $editResult = $result == false ? false : $editResult;
+            $insert_nom = $data_base->prepare("UPDATE user SET nom = ? WHERE id = ?");//on prépare la requête pour modifier le nom
+            $result = $insert_nom->execute([$newnom, $_SESSION['user_id']]);//on execute la requête avec le nouveau mot de passe avec l'id de l'utilisateur connecté
+            $editResult = $result == false ? false : $editResult;//si la requête a échoué, on met $editResult à false
         }
 
         if (isset($_POST['newprenom'])) {
@@ -46,8 +46,7 @@ if (isset($_SESSION['user_id'])) {
 
         if (isset($mdp1) && $mdp1 == $mdp2) {
             $insertmdp = $data_base->prepare("UPDATE user SET password = ? WHERE id = ?");
-            $result = $insertmdp->execute($mdp1, $_SESSION['user_id']);
-            $editResult = $result == false ? false : $editResult;
+            $result = $insertmdp->execute([$mdp1, $_SESSION['user_id']]);
         }
     }
 ?>
@@ -96,7 +95,7 @@ if (isset($_SESSION['user_id'])) {
 
         <button> Mettre à jour mon profil</button> 
         <?php
-        if (isset($editResult) && $result == true) {
+        if (isset($editResult) && $result == true) {//si $editResult est défini et que la requête a réussi
             echo "Vos données ont été mises à jour !"; ?>
 
         <?php } ?>

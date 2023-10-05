@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "");
+$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
 if (isset($_SESSION['user_id'])) {
 

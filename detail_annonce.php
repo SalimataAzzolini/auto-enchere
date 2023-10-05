@@ -4,15 +4,16 @@
 
 session_start();
 
-$dataBase = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "");
+$dataBase = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
+
 // on cree une variable qui permet de recupere l'id de l'annonce clique
 $annonce_id = filter_var($_GET["annonce"], FILTER_SANITIZE_NUMBER_INT);
 
 $requete = $dataBase->prepare("SELECT * FROM annonce  WHERE id=?");
 $requete->execute([$annonce_id]);
-$detailAnnonce = $requete->fetch();
+$detailAnnonce = $requete->fetch();// on recupere les donnees de l'annonce
 
-$price = $dataBase->prepare("SELECT MAX(prix_propose) FROM enchere WHERE id_annonce=?");
+$price = $dataBase->prepare("SELECT MAX(prix_propose) FROM enchere WHERE id_annonce=?");// on recupere le prix max de l'enchere sur l'annonce
 $price->execute([$annonce_id]);
 $lastPrice = $price->fetch();
 
@@ -27,7 +28,7 @@ $lastPrice = $price->fetch();
 
     <title> Auto enchere</title>
 
-    <link rel="stylesheet" href="style_detail_annonce.css">
+    <link rel="stylesheet" href="style/style_detail_annonce.css">
 
 </head>
 

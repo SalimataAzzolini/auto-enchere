@@ -4,7 +4,7 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $dataBase = new PDO("mysql:dbname=auto_enchere;host=127.0.0.1", "root", "");
+    $data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
 
     $marque = htmlspecialchars($_POST["marque"]);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_user_vendeur = $_SESSION["user_id"];
 
 
-    $requete = $dataBase->prepare("INSERT INTO annonce (marque,modele,annee,kilometre,energie,puissance,
+    $requete = $data_base->prepare("INSERT INTO annonce (marque,modele,annee,kilometre,energie,puissance,
 description,date_fin_annonce,prix_depart, id_user_vendeur) VALUES (?,?,?,?,?,?,?,?,?,?)");
     $requete->execute([
         $marque, $modele, $annee, $kilometre, $energie, $puissance,

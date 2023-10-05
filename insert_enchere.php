@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $annonce_id = filter_var($_POST["detailAnnonce"], FILTER_SANITIZE_NUMBER_INT);
     $prixAnnonce = filter_var($_POST["price"], FILTER_SANITIZE_NUMBER_INT);
 
-    $dataBase = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "");
+    $data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 } ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
 
     <title> Auto enchere </title>
-    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="style/style_index.css">
 </head>
 
 

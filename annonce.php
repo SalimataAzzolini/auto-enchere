@@ -8,7 +8,7 @@
 
     <title> Auto enchere </title>
 
-    <link rel="stylesheet" href="style_annonces.css">
+    <link rel="stylesheet" href="style/style_annonces.css">
 </head>
 
 
@@ -46,13 +46,12 @@
 
 <?php
 // On lance notre requête vers notre base de données et on instancie un nouvel objet $dbh
-$dbh = new PDO("mysql:dbname=auto_enchere;host=127.0.0.1", "root", "");
+$dbh = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
-// On selectionne toutes les annonces depuis notre table annonce
+// On selectionne toutes les annonces depuis notre table annonce et on joint la table user pour recuperer le prenom du vendeur
 $query = $dbh->query("SELECT a.*, u.prenom FROM annonce a LEFT JOIN user u ON u.id=a.id_user_vendeur");
 
-// On recupere les annonces sous forme d'un tableau associatif et pdo::fetch pour ne pas dupliquer les cles valeurs
-
+// On recupere les annonces sous forme d'un tableau associatif et pdo::fetch pour ne pas dupliquer les cles valeurs de notre tableau
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // var_dump($annonces);

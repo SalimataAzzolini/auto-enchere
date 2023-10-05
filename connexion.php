@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Auto enchere</title>
-    <link rel="stylesheet" href="style_connexion.css">
+    <link rel="stylesheet" href="style/style_connexion.css">
 </head>
 <header>
 
@@ -57,7 +57,7 @@
 
 <?php
 
-$data_base = new PDO("mysql:dbname=auto_enchere;host=127.0.0.1", "root", "");
+$data_base = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
 
 
 

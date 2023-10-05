@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title> Auto Enchere</title>
 
-    <link rel="stylesheet" href="style_inscript.css">
+    <link rel="stylesheet" href="style/style_inscript.css">
 </head>
 
 <body>
