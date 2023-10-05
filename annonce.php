@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="style/style_annonces.css">
 </head>
 
-
-
 <body>
 
     <header>
@@ -45,8 +43,15 @@
 
 
 <?php
-// On lance notre requête vers notre base de données et on instancie un nouvel objet $dbh
-$dbh = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");
+// Connexion à la base de données
+try{
+  $dbh = new PDO("mysql:dbname=auto_enchere;host=localhost", "root", "root");  
+}
+catch(PDOException $e){
+    echo $e->getMessage();
+}
+
+
 
 // On selectionne toutes les annonces depuis notre table annonce et on joint la table user pour recuperer le prenom du vendeur
 $query = $dbh->query("SELECT a.*, u.prenom FROM annonce a LEFT JOIN user u ON u.id=a.id_user_vendeur");
@@ -54,7 +59,6 @@ $query = $dbh->query("SELECT a.*, u.prenom FROM annonce a LEFT JOIN user u ON u.
 // On recupere les annonces sous forme d'un tableau associatif et pdo::fetch pour ne pas dupliquer les cles valeurs de notre tableau
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// var_dump($annonces);
 
 ?> <div class="container_annonce">
     <h2 class="titre_annonce"> LES ANNONCES DU MOMENT </h2>

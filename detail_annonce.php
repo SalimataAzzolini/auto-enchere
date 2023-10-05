@@ -28,7 +28,7 @@ $lastPrice = $price->fetch();
 
     <title> Auto enchere</title>
 
-    <link rel="stylesheet" href="style/style_detail_annonce.css">
+    <link rel="stylesheet" href="style/style_detail_annoncee.css">
 
 </head>
 
@@ -56,8 +56,9 @@ $lastPrice = $price->fetch();
 
     <?php if ($detailAnnonce) { ?>
 
+        <h3> L'annonce en détail :</h3>
         <div class="container_annonce">
-            <h3> L'annonce en détail :</h3>
+           
             <div class="annonce">
                 <p> <strong>Prix de réserve :  <?php echo $detailAnnonce["prix_depart"]; ?> </strong> €</p>
                 <p>Marque : <?php echo $detailAnnonce["marque"]; ?></p>
